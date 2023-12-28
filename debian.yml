@@ -5,6 +5,6 @@ topology:
         
     PC1:
       kind: linux
-      image: ghcr.io/indilib/debian:latest
+      image: ghcr.io/goover/debian:10-buster
        
     
