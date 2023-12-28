@@ -5,6 +5,6 @@ topology:
         
     PC1:
       kind: linux
-      image: ghcr.io/goover/debian:10-buster
+      image: ghcr.io/netivism/docker-debian-base/debian-base:latest
        
     
