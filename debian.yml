@@ -1,0 +1,10 @@
+name: debian
+
+topology:
+  nodes:
+        
+    PC1:
+      kind: linux
+      image: ghcr.io/indilib/debian:latest
+       
+    
