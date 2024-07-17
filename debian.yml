@@ -5,6 +5,6 @@ topology:
         
     PC1:
       kind: linux
-      image: ghcr.io/netivism/docker-debian-base/debian-base:latest
+      image: ghcr.io/netivism/docker-debian-base:latest
        
     
