@@ -1,10 +1,10 @@
-name: debian
+name: suricata
 
 topology:
   nodes:
         
     PC1:
       kind: linux
-      image: ghcr.io/netivism/docker-debian-base:latest
+      image: jasonish/suricata:latest
        
     
