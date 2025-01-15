@@ -1,19 +1,20 @@
-name: aruba
+name: icmpv6
 mgmt:
   network: custom_mgmt                # management network name
   ipv4-subnet: 172.100.100.0/24       # ipv4 range
-  ipv6-subnet: 3fff:172:100:100::/80  # ipv6 range (optional)
+  #ipv6-subnet: 3fff:172:100:100::/80  # ipv6 range (optional)
 
 topology:
   nodes:
-    arubacore:
-      kind: aruba_aoscx 
-      image: vrnetlab/aruba_arubaos-cx:20230531220439
-      #startup-config: cfgcore.txt
-      #ports:
-        #- 8080:80/tcp
-        #- 4443:443/tcp
-            
+
+    srlrt:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:24.10.1
+      type: ixrd3
+      startup-config: nokiasrl/router/config.json
+      exec:
+        - "sysctl -w net.ipv6.conf.e1-1.accept_ra=0" 
+                
     arubaaccess:
       kind: aruba_aoscx 
       image: vrnetlab/aruba_arubaos-cx:20230531220439
@@ -84,7 +85,7 @@ topology:
       
   links:
     
-    - endpoints: ["arubacore:eth1","arubaaccess:eth1"]
+    - endpoints: ["srlrt:e1-1","arubaaccess:eth1"]
       #mtu: 1500
     - endpoints: ["arubaaccess:eth2","PC1:eth1"]
       mtu: 1500
