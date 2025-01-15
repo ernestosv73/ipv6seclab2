@@ -14,6 +14,13 @@ topology:
       startup-config: nokiasrl/router/config.json
       exec:
         - "sysctl -w net.ipv6.conf.e1-1.accept_ra=0" 
+
+    srlsw:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:24.10.1
+      type: ixrd3
+      startup-config: nokiasrl/switch/config.json
+       
                 
     arubaaccess:
       kind: aruba_aoscx 
@@ -87,13 +94,15 @@ topology:
     
     - endpoints: ["srlrt:e1-1","arubaaccess:eth1"]
       #mtu: 1500
+    - endpoints: ["srlrt:e1-2","srlsw:e1-1"]
+      #mtu: 1500  
     - endpoints: ["arubaaccess:eth2","PC1:eth1"]
       mtu: 1500
     - endpoints: ["arubaaccess:eth3","PC2:eth1"]
       mtu: 1500
-    - endpoints: ["arubaaccess:eth4","PC3:eth1"]
+    - endpoints: ["srlsw:e1-2","PC3:eth1"]
       mtu: 1500
-    - endpoints: ["arubaaccess:eth5","PC4:eth1"]
+    - endpoints: ["srlsw:e1-3","PC4:eth1"]
       mtu: 1500
     - endpoints: ["arubaaccess:eth6","suricata:eth1"]
       mtu: 1500  
