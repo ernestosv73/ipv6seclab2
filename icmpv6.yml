@@ -2,7 +2,7 @@ name: icmpv6
 mgmt:
   network: custom_mgmt                # management network name
   ipv4-subnet: 172.100.100.0/24       # ipv4 range
-  ipv6-subnet: 3fff:172:100:100::/80  # ipv6 range (optional)
+  ipv6-subnet: 3fff:172:100:100::/64  # ipv6 range (optional)
 
 topology:
   nodes:
@@ -97,18 +97,18 @@ topology:
     - endpoints: ["srlrt:e1-2","srlsw:e1-1"]
       #mtu: 1500  
     - endpoints: ["arubaaccess:eth2","PC1:eth1"]
-      mtu: 1500
+      #mtu: 1500
     - endpoints: ["arubaaccess:eth3","PC2:eth1"]
-      mtu: 1500
+      #mtu: 1500
     - endpoints: ["srlsw:e1-2","PC3:eth1"]
-      mtu: 1500
+      #mtu: 1500
     - endpoints: ["srlsw:e1-3","PC4:eth1"]
-      mtu: 1500
+      #mtu: 1500
     - endpoints: ["arubaaccess:eth6","suricata:eth1"]
-      mtu: 1500  
+      #mtu: 1500  
     - endpoints: ["arubaaccess:eth7","ntopng:eth1"]
-      mtu: 1500
+      #mtu: 1500
     - endpoints: ["arubaaccess:eth8","ntopng-redis:eth1"]
-      mtu: 1500    
+      #mtu: 1500    
     
     
