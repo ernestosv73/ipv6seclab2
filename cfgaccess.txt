@@ -3,6 +3,8 @@ vlan 10
 exit
 interface vlan 10
 ipv6 address 2001:db8:10::2/64
+ipv6 nd prefix 2001:db8:10::/64
+no ipv6 nd suppress-ra
 exit
 interface 1/1/1
 no routing
@@ -10,5 +12,6 @@ vlan trunk native 10
 no shut
 interface 1/1/2-1/1/6
 no routing
+vlan access 10
 no shutdown
 exit
