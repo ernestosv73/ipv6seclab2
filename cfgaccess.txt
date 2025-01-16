@@ -1,5 +1,7 @@
 conf t
+nd-snooping enable
 vlan 10
+nd-snooping
 exit
 interface vlan 10
 ipv6 address 2001:db8:10::2/64
