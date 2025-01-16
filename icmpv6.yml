@@ -21,7 +21,15 @@ topology:
       type: ixrd3
       startup-config: nokiasrl/switch/config.json
        
-                
+    arubacore:
+      kind: aruba_aoscx 
+      image: vrnetlab/aruba_arubaos-cx:20230531220439
+      startup-config: cfgcore.txt
+      #ports:
+        #- 8080:80/tcp
+        #- 4443:443/tcp            
+    
+    
     arubaaccess:
       kind: aruba_aoscx 
       image: vrnetlab/aruba_arubaos-cx:20230531220439
@@ -94,8 +102,10 @@ topology:
       
   links:
     
-    - endpoints: ["srlrt:e1-1","arubaaccess:eth1"]
+    - endpoints: ["srlrt:e1-1","arubacore:eth1"]
       #mtu: 1500
+    - endpoints: ["arubacore:eth2","arubaccess:eth1"]
+      #mtu: 1500  
     - endpoints: ["srlrt:e1-2","srlsw:e1-1"]
       #mtu: 1500  
     - endpoints: ["arubaaccess:eth2","PC1:eth1"]
