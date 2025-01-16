@@ -37,6 +37,11 @@ topology:
       #ports:
         #- 8080:80/tcp
         #- 4443:443/tcp
+
+    ciscosw:
+      kind: cisco_iol
+      image: vrnetlab/cisco_iol:l2-17.12.01
+      type: l2      
       
     PC1:
       kind: linux
@@ -107,6 +112,8 @@ topology:
     - endpoints: ["arubacore:eth2","arubaaccess:eth1"]
       #mtu: 1500  
     - endpoints: ["srlrt:e1-2","srlsw:e1-1"]
+      #mtu: 1500
+    - endpoints: ["srlrt:e1-3","ciscosw:Ethernet0/1"]
       #mtu: 1500  
     - endpoints: ["arubaaccess:eth2","PC1:eth1"]
       #mtu: 1500
