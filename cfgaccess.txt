@@ -11,6 +11,7 @@ exit
 interface 1/1/1
 no routing
 vlan trunk native 10
+nd-snooping trust
 no shut
 interface 1/1/2-1/1/6
 no routing
