@@ -1,5 +1,14 @@
 conf t
-interface 1/1/1-1/1/6
+vlan 10
+exit
+interface vlan 10
+ipv6 address 2001:db8:10::2/64
+exit
+interface 1/1/1
+no routing
+vlan trunk native 10
+no shut
+interface 1/1/2-1/1/6
 no routing
 no shutdown
 exit
