@@ -2,6 +2,7 @@ conf t
 vrf definition lan
 address-family ipv6
 exit
+exit
 vlan 30
 exit
 interface vlan 30
