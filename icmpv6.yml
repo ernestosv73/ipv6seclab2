@@ -33,7 +33,8 @@ topology:
     ciscosw:
       kind: cisco_iol
       image: vrnetlab/cisco_iol:l2-17.12.01
-      type: l2      
+      type: l2
+      startup-config: configuration.txt
       
     PC1:
       kind: linux
