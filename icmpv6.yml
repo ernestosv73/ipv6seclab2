@@ -113,11 +113,11 @@ topology:
       #mtu: 1500
     - endpoints: ["srlsw:e1-3","PC4:eth1"]
       #mtu: 1500
-    - endpoints: ["arubaaccess:eth6","suricata:eth1"]
+    - endpoints: ["arubaaccess:eth4","suricata:eth1"]
       #mtu: 1500  
-    - endpoints: ["arubaaccess:eth7","ntopng:eth1"]
+    - endpoints: ["arubaaccess:eth5","ntopng:eth1"]
       #mtu: 1500
-    - endpoints: ["arubaaccess:eth8","ntopng-redis:eth1"]
+    - endpoints: ["arubaaccess:eth6","ntopng-redis:eth1"]
       #mtu: 1500    
     
     
