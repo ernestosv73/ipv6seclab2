@@ -34,7 +34,7 @@ topology:
       kind: cisco_iol
       image: vrnetlab/cisco_iol:l2-17.12.01
       type: l2
-      #startup-config: cisco/configuration.txt
+      startup-config: cisco/configuration.txt
       
     PC1:
       kind: linux
