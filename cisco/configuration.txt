@@ -3,6 +3,7 @@ vlan 30
 exit
 interface vlan 30
 ipv6 address 2001:db8:30::2/64
+no shut
 exit
 interface ethernet 0/1
 switchport trunk native vlan 30
