@@ -21,21 +21,8 @@ topology:
       type: ixrd3
       startup-config: nokiasrl/switch/config.json
        
-    arubacore:
-      kind: aruba_aoscx 
-      image: vrnetlab/aruba_arubaos-cx:20230531220439
-      startup-config: cfgcore.txt
-      #ports:
-        #- 8080:80/tcp
-        #- 4443:443/tcp            
-    
     
     arubaaccess:
-      stages:
-        create:
-          wait-for:
-            - node: arubacore
-              stage: healthy 
       kind: aruba_aoscx 
       image: vrnetlab/aruba_arubaos-cx:20230531220439
       startup-config: cfgaccess.txt
@@ -44,11 +31,6 @@ topology:
         #- 4443:443/tcp
 
     ciscosw:
-      stages:
-        create:
-          wait-for:
-            - node: arubaaccess
-              stage: healthy 
       kind: cisco_iol
       image: vrnetlab/cisco_iol:l2-17.12.01
       type: l2      
@@ -117,10 +99,8 @@ topology:
       
   links:
     
-    - endpoints: ["srlrt:e1-1","arubacore:eth1"]
+    - endpoints: ["srlrt:e1-1","arubaaccess:eth1"]
       #mtu: 1500
-    - endpoints: ["arubacore:eth2","arubaaccess:eth1"]
-      #mtu: 1500  
     - endpoints: ["srlrt:e1-2","srlsw:e1-1"]
       #mtu: 1500
     - endpoints: ["srlrt:e1-3","ciscosw:Ethernet0/1"]
