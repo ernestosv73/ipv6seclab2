@@ -1,4 +1,5 @@
 conf t
+no ipv6 route vrf clab-mgmt ::/0 Ethernet0/0
 vrf definition lan
 address-family ipv6
 exit
