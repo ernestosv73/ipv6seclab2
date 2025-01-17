@@ -58,6 +58,12 @@ topology:
       image: docker.io/esanchezv/kaliipv6v2.2:latest
       #exec:
       #- ip -6 route del default dev eth0
+
+    PC5:
+      kind: linux
+      image: docker.io/esanchezv/kaliipv6v2.2:latest
+      #exec:
+      #- ip -6 route del default dev eth0  
       
     ntopng:
       kind: linux
@@ -118,6 +124,8 @@ topology:
     - endpoints: ["arubaaccess:eth5","ntopng:eth1"]
       #mtu: 1500
     - endpoints: ["arubaaccess:eth6","ntopng-redis:eth1"]
-      #mtu: 1500    
+      #mtu: 1500
+    - endpoints: ["ciscosw:Ethernet0/2","PC5:eth1"]
+      #mtu: 1500      
     
     
