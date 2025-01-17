@@ -47,7 +47,7 @@ topology:
       stages:
         create:
           wait-for:
-            - node: arubacccess
+            - node: arubaaccess
               stage: healthy 
       kind: cisco_iol
       image: vrnetlab/cisco_iol:l2-17.12.01
