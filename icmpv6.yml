@@ -31,6 +31,11 @@ topology:
     
     
     arubaaccess:
+      stages:
+        create:
+          wait-for:
+            - node: arubacore
+              stage: healthy 
       kind: aruba_aoscx 
       image: vrnetlab/aruba_arubaos-cx:20230531220439
       startup-config: cfgaccess.txt
@@ -39,6 +44,11 @@ topology:
         #- 4443:443/tcp
 
     ciscosw:
+      stages:
+        create:
+          wait-for:
+            - node: arubacccess
+              stage: healthy 
       kind: cisco_iol
       image: vrnetlab/cisco_iol:l2-17.12.01
       type: l2      
