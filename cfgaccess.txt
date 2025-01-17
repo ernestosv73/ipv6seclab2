@@ -5,6 +5,7 @@ nd-snooping
 exit
 interface vlan 10
 ipv6 address 2001:db8:10::2/64
+no shut
 exit
 interface 1/1/1
 no routing
