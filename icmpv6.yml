@@ -32,6 +32,7 @@ topology:
 
     ciscosw:
       kind: cisco_iol
+      mgmt-ipv4: 172.20.20.8
       image: vrnetlab/cisco_iol:l2-17.12.01
       type: l2
       #startup-config: cisco/config.partial
