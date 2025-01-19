@@ -35,7 +35,7 @@ topology:
       mgmt-ipv4: 172.20.20.8
       image: vrnetlab/cisco_iol:l2-17.12.01
       type: l2
-      #startup-config: cisco/config.partial
+      startup-config: cisco/config.partial
       binds:
        - config/disable_ipv6_ra.sh:/iol/disable_ipv6_ra.sh
       exec:
