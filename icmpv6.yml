@@ -56,13 +56,13 @@ topology:
       
     PC3:
       kind: linux
-      image: docker.io/esanchezv/kaliipv6v2.2:latest
+      image: docker.io/esanchezv/kaliipv6v2.1:latest
       #exec:
       #- ip -6 route del default dev eth0
       
     PC4:
       kind: linux
-      image: docker.io/esanchezv/kaliipv6:latest
+      image: esanchezv/kaliipv6:v2.3
       #exec:
       #- ip -6 route del default dev eth0
 
