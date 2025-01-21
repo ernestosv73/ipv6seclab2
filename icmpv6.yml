@@ -130,14 +130,18 @@ topology:
       mtu: 1500
     - endpoints: ["arubaaccess:eth3","PC2:eth1"]
       mtu: 1500
+    - endpoints: ["arubaaccess:eth4","PC5:eth1"]
+      mtu: 1500
+    - endpoints: ["arubaaccess:eth5","PC6:eth1"]
+      mtu: 1500  
     - endpoints: ["srlsw:e1-2","PC3:eth1"]
       mtu: 1500
     - endpoints: ["srlsw:e1-3","PC4:eth1"]
       mtu: 1500
-    - endpoints: ["ciscosw:Ethernet0/2","PC5:eth1"]
-      mtu: 1500
-    - endpoints: ["ciscosw:Ethernet0/3","PC6:eth1"]
-      mtu: 1500  
+    #- endpoints: ["ciscosw:Ethernet0/2","PC5:eth1"]
+      #mtu: 1500
+    #- endpoints: ["ciscosw:Ethernet0/3","PC6:eth1"]
+      #mtu: 1500  
       
     
     
