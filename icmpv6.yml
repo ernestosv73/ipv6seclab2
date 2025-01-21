@@ -89,7 +89,7 @@ topology:
        - /home/ernesto/ntopng/data/ntopng:/var/lib/ntopng
       cmd: "--community -d /var/lib/ntopng -r 127.0.0.1:6379@0 -w 0.0.0.0:3000 -i eth1 -i syslog://*:9999"
       exec:
-      - ip -6 route del default dev eth0
+      #- ip -6 route del default dev eth0
       - ip -6 addr add 2001:db8::20/64 dev eth1
       ports: 
       - 3000:3000/tcp
@@ -100,8 +100,8 @@ topology:
       binds:
        - /home/ernesto/ntopng/data/redis:/data
       cmd: "--save 900 1" 
-      exec:
-      - ip -6 route del default dev eth0
+      #exec:
+      #- ip -6 route del default dev eth0
       ports: 
       - 6379:6379/tcp
 
@@ -113,7 +113,7 @@ topology:
        - config/local.rules:/var/lib/suricata/rules/local.rules
        - config/rsyslog.conf:/etc/rsyslog.conf
       exec:
-      - ip -6 route del default dev eth0
+      #- ip -6 route del default dev eth0
       - "sysctl -w net.ipv6.conf.eth1.accept_ra=0"
       - ip -6 addr add 2001:db8:10::10/64 dev eth1
       - ip -6 route add default dev eth1  
