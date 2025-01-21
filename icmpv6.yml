@@ -30,17 +30,17 @@ topology:
         #- 8080:80/tcp
         #- 4443:443/tcp
 
-    ciscosw:
-      kind: cisco_iol
-      mgmt-ipv4: 172.20.20.8
-      image: vrnetlab/cisco_iol:l2-17.12.01
-      type: l2
-      startup-config: cisco/config.partial
-      binds:
-       - config/disable_ipv6_ra.sh:/iol/disable_ipv6_ra.sh
-      exec:
-        - chmod +x /iol/disable_ipv6_ra.sh
-        - bash /iol/disable_ipv6_ra.sh 
+    #ciscosw:
+      #kind: cisco_iol
+      #mgmt-ipv4: 172.20.20.8
+      #image: vrnetlab/cisco_iol:l2-17.12.01
+      #type: l2
+      #startup-config: cisco/config.partial
+      #binds:
+       #- config/disable_ipv6_ra.sh:/iol/disable_ipv6_ra.sh
+      #exec:
+        #- chmod +x /iol/disable_ipv6_ra.sh
+        #- bash /iol/disable_ipv6_ra.sh 
       
     PC1:
       kind: linux
@@ -124,7 +124,7 @@ topology:
       #mtu: 1500
     - endpoints: ["srlrt:e1-2","srlsw:e1-1"]
       #mtu: 1500
-    - endpoints: ["srlrt:e1-3","ciscosw:Ethernet0/1"]
+    #- endpoints: ["srlrt:e1-3","ciscosw:Ethernet0/1"]
       #mtu: 1500  
     - endpoints: ["arubaaccess:eth2","PC1:eth1"]
       mtu: 1500
