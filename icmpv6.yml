@@ -17,7 +17,7 @@ topology:
 
     srlsw:
       kind: nokia_srlinux
-      image: ghcr.io/nokia/srlinux:23.10.1
+      image: ghcr.io/nokia/srlinux:24.7.1
       type: ixrd3
       #startup-config: nokiasrl/switch/config.json
        
