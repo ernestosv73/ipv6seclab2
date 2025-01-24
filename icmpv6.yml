@@ -18,8 +18,8 @@ topology:
     srlsw:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux:latest
-      #type: ixrd3
-      #startup-config: nokiasrl/switch/config.json
+      type: ixrd5
+      startup-config: nokiasrl/switch/config.json
        
     
     #arubaaccess:
