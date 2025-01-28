@@ -17,9 +17,9 @@ topology:
 
     srlsw:
       kind: nokia_srlinux
-      image: ghcr.io/nokia/srlinux:24.7.1
+      image: ghcr.io/nokia/srlinux:23.10.1
       type: ixrd3
-      #startup-config: nokiasrl/switch/config.json
+      startup-config: nokiasrl/switch/config.json
        
     
     #arubaaccess:
@@ -60,21 +60,21 @@ topology:
       #exec:
       #- ip -6 route del default dev eth0
       
-    PC4:
-      kind: linux
-      image: docker.io/esanchezv/kaliipv6v2.1:latest
+    #PC4:
+      #kind: linux
+      #image: docker.io/esanchezv/kaliipv6v2.1:latest
       #exec:
       #- ip -6 route del default dev eth0
 
-    PC5:
-      kind: linux
-      image: docker.io/esanchezv/kaliipv6v2.1:latest
+    #PC5:
+      #kind: linux
+      #image: docker.io/esanchezv/kaliipv6v2.1:latest
       #exec:
       #- ip -6 route del default dev eth0
       
-    PC6:
-      kind: linux
-      image: docker.io/esanchezv/kaliipv6v2.1:latest
+    #PC6:
+      #kind: linux
+      #image: docker.io/esanchezv/kaliipv6v2.1:latest
       #exec:
       #- ip -6 route del default dev eth0  
 
