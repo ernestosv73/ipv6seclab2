@@ -13,7 +13,7 @@ topology:
       type: ixrd3
       startup-config: nokiasrl/router/config.json
       exec:
-        - "sysctl -w net.ipv6.conf.e1-1.accept_ra=0" 
+        - "sysctl -w net.ipv6.conf.e1-2.accept_ra=0" 
 
     srlsw:
       kind: nokia_srlinux
