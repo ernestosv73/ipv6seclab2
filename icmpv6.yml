@@ -9,17 +9,17 @@ topology:
 
     srlrt:
       kind: nokia_srlinux
-      image: ghcr.io/nokia/srlinux:23.10.1
+      image: ghcr.io/nokia/srlinux:24.10.1
       type: ixrd3
-      startup-config: nokiasrl/router/config.json
+      #startup-config: nokiasrl/router/config.json
       exec:
         - "sysctl -w net.ipv6.conf.e1-2.accept_ra=0" 
 
     srlsw:
       kind: nokia_srlinux
-      image: ghcr.io/nokia/srlinux:23.10.1
+      image: ghcr.io/nokia/srlinux:24.10.1
       type: ixrd3
-      startup-config: nokiasrl/switch/config.json
+      #startup-config: nokiasrl/switch/config.json
        
     
     #arubaaccess:
