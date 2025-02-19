@@ -125,7 +125,7 @@ topology:
     #- endpoints: ["srlrt:e1-1","arubaaccess:eth1"]
       #mtu: 1500
     - endpoints: ["srlrt:e1-2","srlsw:e1-1"]
-      mtu: 1500
+      #mtu: 1500
     #- endpoints: ["srlrt:e1-3","ciscosw:Ethernet0/1"]
       #mtu: 1500  
     #- endpoints: ["arubaaccess:eth2","PC1:eth1"]
